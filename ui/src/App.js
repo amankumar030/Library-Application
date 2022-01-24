@@ -10,6 +10,7 @@ import AllBooks from './components/AllBooks';
 import Header from './components/Header';
 import AddBook from './components/AddBook';
 import Favourite from './components/Favourite';
+import UpdateBook from './components/Update';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route exact path='/books' element={< AllBooks />}></Route>
             <Route exact path='/add-book' element={< AddBook />}></Route>
             <Route exact path='/fav' element={< Favourite />}></Route>
+            <Route exact path='/update' element={< UpdateBook />}></Route>
                
           </Routes>
           </Col>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import { Button, Form, FormGroup, Label } from "reactstrap";
 import { Input } from "reactstrap";
@@ -23,7 +23,9 @@ function AddBook() {
         transition: 'scale'
       }
     
-
+    useEffect(()=>{
+        document.title="Add Book"
+    })
     function addBook(e) {
         e.preventDefault();
         if (book.title == '') {

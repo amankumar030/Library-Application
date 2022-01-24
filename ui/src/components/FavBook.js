@@ -18,7 +18,7 @@ const FavBook = ({ book }) => {
   
 
     return (
-      
+           <Container>
             <div style={bookStyle} className="mt-2">
                 <div className="row my-2">
                     <div className="col"><img src={book.image} className="rounded mx-auto d-block" style={style} alt="" /></div>
@@ -31,6 +31,7 @@ const FavBook = ({ book }) => {
                     <div className="col my-5"><Button color="danger"  id="deletebutton" onClick={() => deleteBook(book.id)}>Remove</Button></div>
                 </div>
             </div>
+            </Container>
 
     )
 }

@@ -3,7 +3,7 @@ import React from "react";
 import Book from "./Book";
 import FavBook from "./FavBook";
 import { useEffect, useState } from "react/cjs/react.development";
-import { Button } from "reactstrap";
+import { Button, Container } from "reactstrap";
 function Favourite() {
     const [books,setBooks]=useState([])
     const [amount,setAmount]=useState()
@@ -12,6 +12,7 @@ function Favourite() {
 
     useEffect(()=>{
         getAllFavBook();
+        document.title="My Cart"
 
 
     })
@@ -33,15 +34,19 @@ function Favourite() {
     }
 
     return (
+        <Container>
         <div >
-            <h3 className="text-center mt-2">Items in your Cart</h3>
-           
-        {books.map((item)=><FavBook book={item}></FavBook>)}
-        <div className="row mt-4">
+            
+            <h3 className="text-center mt-2">Your Cart</h3>
+            <hr></hr>
+           {books.length===0?<p className="text-center">Your Cart is Empty</p>:books.map((item)=><FavBook book={item}></FavBook>)}
+           {books.length===0?<p></p>: <div className="row mt-4">
            <div className="col"><h4 className="text-center">Total : INR {amount}</h4></div>
            <div className="col"><Button className="text-center mr-4" style={buttonStyle}>Proceed to Pay </Button></div>
+        </div>}
+       
         </div>
-        </div>
+        </Container>
     )
 }
 export default Favourite;

@@ -7,6 +7,7 @@ function AllBooks() {
     const [books, setBooks] = useState([])
     const style={}
     useEffect(() => {
+        document.title="Home"
         getAllBooks();
     })
 
